@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TK Growth LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #111110;
+    --ink-mid: #4a4a47;
+    --ink-light: #888880;
+    --rule: #d8d6ce;
+    --bg: #f7f5f0;
+    --bg-white: #ffffff;
+    --accent: #1a1a18;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 2rem 0;
+    background: var(--bg);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .wordmark span {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  nav {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 7rem 3rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: end;
+  }
+
+  .hero-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  .hero-body {
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-body p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-weight: 300;
+  }
+
+  /* DIVIDER */
+  .rule {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* SERVICES */
+  .services {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding-top: 0.35rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .service-item {
+    border-top: 2px solid var(--ink);
+    padding-top: 1.5rem;
+  }
+
+  .service-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-item h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+
+  .service-item p {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left .section-label {
+    color: #888880;
+  }
+
+  .contact-left h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--bg);
+    margin-top: 1.25rem;
+  }
+
+  .contact-left h2 em {
+    font-style: italic;
+    color: #b0aea6;
+  }
+
+  form {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888880;
+    margin-bottom: 0.5rem;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    background: #1e1e1c;
+    border: 1px solid #333330;
+    color: var(--bg);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #555552;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #888880;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+  }
+
+  .submit-note {
+    font-size: 0.78rem;
+    color: #555552;
+  }
+
+  button[type="submit"] {
+    background: var(--bg);
+    color: var(--ink);
+    border: none;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0;
+  }
+
+  button[type="submit"]:hover {
+    background: #d8d6ce;
+  }
+
+  .form-success {
+    display: none;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #b0aea6;
+    padding: 2rem 0;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid #2a2a28;
+    background: var(--ink);
+    padding: 2rem 3rem;
+    max-width: 100%;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-inner p {
+    font-size: 0.78rem;
+    color: #555552;
+    letter-spacing: 0.04em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header-inner { padding: 0 1.5rem; }
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem 3rem; }
+    .rule { padding: 0 1.5rem; }
+    .services { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .submit-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="wordmark" href="#">TK Growth <span>LLC</span></a>
+    <nav>Pet Consumables Advisory</nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-title">
+    <p class="hero-label">About</p>
+    <h1>Capital-focused<br>advisory for the<br><em>pet food industry.</em></h1>
+  </div>
+  <div class="hero-body">
+    <p>TK Growth LLC is a boutique consulting shop serving capital providers in the pet consumables space. Focused primarily on food and treats, TKG draws on the founder's 15+ years launching, growing, and managing pet food companies.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="services">
+  <div class="section-label">Services</div>
+  <div class="services-grid">
+
+    <div class="service-item">
+      <p class="service-tag">Retained</p>
+      <h3>Ongoing Portfolio Support</h3>
+      <p>Longer-term engagements for capital providers with portfolio companies that need professional guidance on channel development, product innovation, and operational excellence.</p>
+    </div>
+
+    <div class="service-item">
+      <p class="service-tag">Project</p>
+      <h3>Due Diligence &amp; Analysis</h3>
+      <p>Shorter-term work for capital providers requiring due diligence services and industry opinion. Project work directly for brands is considered on a case-by-case basis.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label">Contact</p>
+      <h2>How can<br>we <em>help?</em></h2>
+    </div>
+    <div class="contact-right">
+      <form id="contactForm" action="https://formspree.io/f/maqpdwvb" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="org">Organization</label>
+            <input type="text" id="org" name="organization" placeholder="Firm or company">
+          </div>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your situation or inquiry." required></textarea>
+        </div>
+        <div class="submit-row">
+          <p class="submit-note">Responses within one business day.</p>
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        Thank you — we'll be in touch shortly.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2023 TK Growth LLC. All rights reserved.</p>
+    <p>tkgrowthllc.com</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      alert('Something went wrong. Please try again.');
+    }
+  });
+</script>
+
+</body>
+</html>
